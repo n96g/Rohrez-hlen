@@ -1,0 +1,20 @@
+<?php
+
+$from = "From: ". $_POST['User'] ."";
+$to = "admin@domain.de";
+$betreff = "User eines Scripts";
+
+$zahl = $_POST['zahl'];
+
+$message =  "Diese Nachricht wurde von einem PHP-SCript erzeugt. \n"
+    ."Die eingegebene zahl lautet: ". $zahl ."\n";
+    
+    if(!mail($to, $betreff, $message, $from)) {
+        echo "Fehler beim Senden an dne Server!";
+        exit;
+    }
+    else {
+        echo "erfolgreich an Server gesendet";
+    }
+    
+    php?>
